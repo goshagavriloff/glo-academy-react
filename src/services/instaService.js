@@ -1,6 +1,6 @@
-export default class InstaService{
+export default class instaService{
   constructor(){
-    this._apiBase='http://localhost:8080';
+    this._apiBase='http://localhost:3000';
   }
   getResource=async (url)=>{
     const res=await fetch(`${this._apiBase}${url}`);
