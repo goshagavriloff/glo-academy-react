@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import User from './User';
 import instaService from '../services/instaService';
+import ErrorMessage from './Error';
 export default class Posts extends Component {
   //https://stackoverflow.com/questions/52237855/support-for-the-experimental-syntax-classproperties-isnt-currently-enabled
 //https://stackoverflow.com/questions/33527653/babel-6-regeneratorruntime-is-not-defined?page=1&tab=votes#tab-top
@@ -59,7 +60,9 @@ export default class Posts extends Component {
     render() {
       const {error,posts}=this.state;
 
-
+      if (error) {
+        return <ErrorMessage />;
+      }
       const items =this.renderItems(posts);
 
         return (
