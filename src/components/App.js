@@ -5,14 +5,18 @@ import '../styles/index.css';
 import Header from './Header';
 import Feed from './Feed';
 import Profile from './Profile';
+import {BrowserRouter as Router,Route} from 'react-router-dom';
 class App extends Component {
     render() {
         return (
-          <div className="App">
-            <Header />
-            <Feed />
-            <Profile />
-          </div>
+          <Router>
+            <div className="App">
+              <Header />
+              <Route path='/' component={Feed} exact/>
+              <Route path='/profile' component={Profile} exact/>
+              
+            </div>
+          </Router>
         );
     }
 }
